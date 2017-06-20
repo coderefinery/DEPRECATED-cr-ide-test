@@ -16,6 +16,8 @@ def factorial(n):
            int
                n! for non-negative numbers n
     """
+    if n < 0:
+        raise ValueError("Only positive numbers supported")
     if n == 0:
         return 1
     if n < 0:
