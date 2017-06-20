@@ -20,4 +20,6 @@ def factorial(n):
         raise ValueError("Only positive numbers supported")
     if n == 0:
         return 1
-    return n * factorial(n-1)
+    if n < 0:
+        return -1
+    return n * factorial(n - 1)
