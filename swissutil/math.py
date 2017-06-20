@@ -17,7 +17,9 @@ def factorial(n):
                n! for non-negative numbers n
     """
     if n < 0:
-        raise ValueError("Only positive numbers are allowed. ")
+        raise ValueError("Only positive numbers supported")
     if n == 0:
         return 1
-    return n * factorial(n-1)
+    if n < 0:
+        return -1
+    return n * factorial(n - 1)
