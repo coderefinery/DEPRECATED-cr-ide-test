@@ -17,15 +17,7 @@ install:
   - pip install -r requirements.txt
 
 script:
-  - if [[ $TRAVIS_PYTHON_VERSION == 2.7 ]];
-    then py.test -vv --cov swisstool;
-    else py.test -vv;
-    fi
-
-after_success:
-  - if [[ $TRAVIS_PYTHON_VERSION == 2.7 ]];
-    then coveralls;
-    fi
+  - py.test -vv;
 
 notifications:
   email: false
