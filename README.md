@@ -1,3 +1,4 @@
+![Travis Status](https://travis-ci.org/coderefinery/cr-ide-test.svg?branch=master)
 # CodeRefinery Unit test repository
 
 This is a simple codebase that will demonstrate unit testing and artefacts
