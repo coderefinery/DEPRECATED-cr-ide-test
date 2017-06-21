@@ -34,7 +34,7 @@ def rot15(s):
     """
     chars = u"abcdefghijklnmopqrstuvwxyzåäöø"
     trans = chars[15:]+chars[:15]
-    return unicode('').join(_lookup(c, chars, trans) for c in s )
+    return u''.join(_lookup(c, chars, trans) for c in s )
 
 
 def _lookup(char, original, rotated):
