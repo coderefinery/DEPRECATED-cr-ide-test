@@ -26,10 +26,8 @@ def evaluate_string_for_stuff(foobar):
     string_acceptable = is_acceptable(foobar)
     #printing messages is typically not desirable behaviour, it will go away
     if string_acceptable:
-        print(SUCCESS_MESSAGE)
         return 0
     else:
-        print(ERROR_MESSAGE)
         return -1
 
 def is_acceptable(input_):
@@ -51,7 +49,7 @@ def is_acceptable(input_):
             True if string is acceptable, False if it is not
 
     """
-    has_numbers = any(char.isalnum() for char in input_[1:-1])
+    has_numbers = any(char.isdigit() for char in input_[1:-1])
     has_lower = any(char.islower() for char in input_[1:-1])
     has_upper = any(char.isupper() for char in input_[1:-1])
     has_length = len(input_) > MIN_PASSWORD_LENGTH

@@ -14,6 +14,7 @@ def test_is_acceptable():
     # uppercase only first
     assert not is_acceptable("Testing123")
     assert is_acceptable("123Testing")
+    assert not is_acceptable("aBCdefgHIJK")
 
 
 # py.test all about convenience. When a function matches the test signature
@@ -22,11 +23,7 @@ def test_is_acceptable():
 def test_evaluate_string_for_stuff(capsys):
     #capsys captures sys.stdout and sys.stderr
     assert evaluate_string_for_stuff("123Testing") == 0
-    out, err = capsys.readouterr()
-    assert out.strip() == SUCCESS_MESSAGE
     assert evaluate_string_for_stuff("123testinG") != 0
-    out, err = capsys.readouterr()
-    assert out.strip() == ERROR_MESSAGE
 
 def test_evaluate_string_for_stuff_with_mocking(mocker):
     # mocker can be used to *patch* objects so that instead of
